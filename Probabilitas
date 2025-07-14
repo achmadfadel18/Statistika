@@ -1,0 +1,48 @@
+def p_kertas_violet():
+    print("=== Soal 1: Probabilitas Kertas Violet ===")
+    try:
+        total_kertas = int(input("Masukkan total jumlah kertas: "))
+        magenta_motif_totol = int(input("Jumlah kertas magenta bermotif totol: "))
+        magenta_polos = int(input("Jumlah kertas magenta polos: "))
+        violet_motif_totol = int(input("Jumlah kertas violet bermotif totol: "))
+        
+        #  Hitung violet polos
+        violet_polos = total_kertas - (magenta_motif_totol + magenta_polos + violet_motif_totol)
+        
+
+        # formula marginal
+        total_violet = violet_motif_totol + violet_polos
+        p_violet = total_violet / total_kertas
+        persen_violet = p_violet * 100
+
+        # Tampilkan hasil
+        print(f"Jumlah kertas violet polos: {violet_polos}")
+        print(f"Probabilitas kertas violet:")
+        print(f" - Pecahan  : {total_violet}/{total_kertas}")
+        print(f" - Desimal  : {p_violet:.2f}")
+        print(f" - Persen   : {persen_violet:.2f}%")
+
+    except:
+        print("Input tidak valid, pastikan semuanya berupa angka.")
+
+def p_gambar_koin():
+    print("\n=== Soal 2: Probabilitas Kejadian Bebas (Lempar Uang 2 Kali) ===")
+    try:
+        p_gambar_1 = float(input("Masukkan peluang gambar lemparan pertama (misal 0.5): "))
+        p_gambar_2 = float(input("Masukkan peluang gambar lemparan kedua (misal 0.5): "))
+
+        #formula
+        p_kedua_gambar = p_gambar_1 * p_gambar_2
+        persen = p_kedua_gambar * 100
+
+        # Tampilkan hasil
+        print(f"Probabilitas kedua lemparan menghasilkan gambar:")
+        print(f" - Desimal  : {p_kedua_gambar:.2f}")
+        print(f" - Persen   : {persen:.2f}%")
+
+    except:
+        print("Input tidak valid, pastikan menggunakan angka desimal seperti 0.5")
+
+# Jalankan kedua soal
+p_kertas_violet()
+p_gambar_koin()
